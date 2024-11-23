@@ -3,11 +3,11 @@
     margin: 0;
 }
 
-body{
+html{
     background: linear-gradient(#4A90E2, #294F7C);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -37,15 +37,14 @@ body{
 #box{
     display: flex;
     background-color: #CADFF8;
-    width: 55rem;
-    height: 80dvh;
+    width: 65rem;
+    height: 70dvh;
     border-radius: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 #n-conta{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
 
@@ -65,7 +64,7 @@ body{
 .login{
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
     padding: 3rem 3rem;
 }
 
@@ -81,7 +80,6 @@ body{
     padding: 1dvh 2rem 1dvh 2rem;
     border-radius: 30px;
     color: #4A90E2;
-
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -91,6 +89,7 @@ body{
     border: #294F7C solid 2px;
     transform: scale(1.1);
 }
+
 
 .title-forms{
     font-family: "Kantumruy Pro", sans-serif;
@@ -122,6 +121,15 @@ body{
     font-style: italic;
 }
 
+input:focus{
+    outline: 2px solid #4A90E2;     /* oranges! yey */
+}
+
+input::placeholder{
+    color: #4A90E2;
+}
+
+
 .btn-in{
     border: none;
     background-color: #294F7C;
@@ -129,7 +137,7 @@ body{
     border-radius: 30px;
     color: #FFFFFF;
     width: 120px;
-
+    font-family:  "Kantumruy Pro", sans-serif;;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -143,5 +151,21 @@ body{
 }
 
 .image img{
-    height: 80vh;
+    height: 70vh;
 }   
+
+a{
+    color: #294F7C;
+    text-decoration: none;
+
+    font-family: "Kantumruy Pro", sans-serif;
+    transition: transform 0.1s;
+}
+
+a:hover{
+    color: #4A90E2;
+    text-decoration: none;
+
+    font-family: "Kantumruy Pro", sans-serif;
+    transform: scale(1.1);
+}

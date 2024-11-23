@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background: linear-gradient(#4A90E2, #294F7C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.title-page {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 2rem;
+    font-family: "Kodchasan", sans-serif;
+    color: #FFFFFF;
+}
+
+.title-page h1 {
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: left;
+}
+
+.title-page h2 {
+    font-size: 2rem;
+    font-weight: 200;
+    font-style: italic;
+    margin: 0 auto; 
+}
+
+.exib_times{
+    font-family: "Kantumruy Pro", sans-serif;
+    color: #4A90E2;
+    background-color: #CADFF8;
+    width: 20rem;
+    height: auto;
+    border-radius: 0 30px 30px 0;
+    padding: 1rem;
+}
+
+.list{
+    padding: 1rem;
+}
+
+.list li{
+    list-style: none;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_time table {
+    width: 30rem;
+    border-collapse: collapse; /* Remove espaçamento entre bordas */
+    margin: 2rem auto; /* Centraliza a tabela */
+    background-color: #fff; /* Fundo branco para contraste */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Impede bordas estourarem */
+}
+
+.box_time th, .box_time td {
+    border: 1px solid #ddd; /* Bordas suaves */
+    text-align: center; /* Centraliza texto */
+    padding: 1rem; /* Espaçamento interno */
+    font-family: "Kodchasan", sans-serif; /* Estilo consistente */
+    color: #294F7C; /* Cor do texto */
+}
+
+.box_time th {
+    background-color: #4A90E2; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Texto branco */
+    font-weight: bold;
+}
+
+.box_time tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fundo alternado para linhas pares */
+}
+
+.btn{
+    border: none;
+    background-color: #4A90E2;
+    padding: 1dvh 2rem 1dvh 2rem;
+    border-radius: 30px;
+    color: #CADFF8;
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn:hover{
+    background: #4A90E2;
+    border: #4A90E2 solid 2px;
+    transform: scale(1.1);
+
+    color: #18365A;
+}

@@ -4,6 +4,7 @@ document.querySelector('#cadastroForm').addEventListener('submit', async (event)
     const nome = document.querySelector('#nome').value.trim();
     const sobrenome = document.querySelector('#sobrenome').value.trim();
     const email = document.querySelector('#email').value.trim();
+    const funcao = document.querySelector('#funcao').value.trim(); // Captura o valor do novo campo
     const senha = document.querySelector('#senha').value;
     const confirmSenha = document.querySelector('#confirm-senha').value;
     const cpf = document.querySelector('#cpf').value.trim();
@@ -15,7 +16,7 @@ document.querySelector('#cadastroForm').addEventListener('submit', async (event)
     const cargo = document.querySelector('input[name="cargo"]:checked').value;
 
     // Validações básicas
-    if (!nome || !sobrenome || !email || !senha || !cpf || areaAtuacao === 'Selecione uma opção') {
+    if (!nome || !sobrenome || !email || !funcao || !senha || !cpf || areaAtuacao === 'Selecione uma opção') {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
     }
@@ -33,6 +34,7 @@ document.querySelector('#cadastroForm').addEventListener('submit', async (event)
         password: senha,
         area_of_activity: areaAtuacao, // Envia o texto selecionado
         role: cargo,
+        function_user: funcao, // Adiciona o novo campo ao objeto
     };
 
     console.log('Dados enviados ao backend:', user);

@@ -8,11 +8,11 @@ SELECT * FROM post;
 
 CREATE TABLE user (
 	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    CPF INT NOT NULL,
+    CPF VARCHAR(11) NOT NULL,
 	name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    area_of_​​activity VARCHAR(255),
+    area_of_activity VARCHAR(255),
     role VARCHAR(255)
 );
 
@@ -25,9 +25,7 @@ CREATE TABLE enterprise (
     CPF_stakeholder INT NOT NULL,
     address VARCHAR(255) NOT NULL,
     phone INT NOT NULL,
-    Segment VARCHAR(255) NOT NULL,
-    type_enterprise ENUM ('Empresário Individual (EI)', 'Microempreendedor Individual (MEI)', 'Sociedade Limitada (LTDA)', 'Sociedade Anônima (S.A.)', 'Microempresa (ME)', 'Empresa de Pequeno Porte (EPP)', 'Empresas Comerciais', '
-	Empresas Prestadoras de Serviços', 'Empresas de Tecnologia', 'Franquias', 'Startups')
+    Segment VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE teams (

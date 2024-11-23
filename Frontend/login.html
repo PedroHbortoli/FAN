@@ -7,10 +7,9 @@
     <title>FAN - Login</title>
     <link rel="stylesheet" href="./assets/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./assets/img/F.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -29,8 +28,8 @@
 
             <div class="login">
                 <div id="n-conta">
-                    <p>Não tem conta?</p>
-                    <button class="btn-up">Sign Up</button>
+                    <p>Novo por aqui?</p>
+                    <button class="btn-up" id="criar-conta">Criar conta</button>
                 </div>
 
                 <span class="forms">
@@ -45,13 +44,20 @@
                         <p>Senha</p>
                         <input type="password" name="Senha" id="Senha" placeholder="Digite Aqui">
                     </div>
-                    <button class="btn-in" type="submit">Sign In</button>
+
+                    <div class="input">
+                        <p>ID da Empresa</p>
+                        <input type="text" name="id-empresa" id="id-empresa" placeholder="Digite Aqui">
+                    </div>
+                    <button class="btn-in" type="submit">Entrar</button>
+                    <a href="./enterprise.html">Sou Empresa</a>
                 </span>
             </div>
 
         </section>
 
     </main>
+    <script src="./assets/js/scriptLogin.js"></script>
 </body>
 
 </html>
