@@ -65,3 +65,11 @@ document.querySelector('#cadastroForm').addEventListener('submit', async (event)
         alert('Erro ao se conectar ao servidor.');
     }
 });
+
+document.getElementById('btn-in').addEventListener('click', async (event) => {
+    window.location.href = "../Frontend/login.html"
+})
+
+document.getElementById('title').addEventListener('click', async (event) => {
+    window.location.href = "../Frontend/login.html"
+})

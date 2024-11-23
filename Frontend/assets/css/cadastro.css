@@ -11,6 +11,10 @@ html{
     width: 100%;
 }
 
+.title{
+    cursor: pointer;
+}
+
 .title-page,
 main {
     display: flex;

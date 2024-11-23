@@ -70,3 +70,7 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
         console.error('Erro na requisição:', error);
     }
 });
+
+document.getElementById('title').addEventListener('click', async (event) => {
+    window.location.href = "../Frontend/login.html"
+});

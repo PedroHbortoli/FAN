@@ -11,6 +11,10 @@ body{
     width: 100%;
 }
 
+.title{
+    cursor: pointer;
+}
+
 .title-page, main{
     display: flex;
     flex-direction: column;

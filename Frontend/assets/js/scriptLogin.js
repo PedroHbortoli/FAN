@@ -1,5 +1,5 @@
 document.querySelector('.btn-in').addEventListener('click', async (event) => {
-    console.log('Botão de login clicado'); // Adicione este log para confirmar
+    console.log('Botão de login clicado'); // Log para debug
     event.preventDefault();
 
     const email = document.getElementById('email').value;
@@ -24,7 +24,16 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
 
         if (response.ok) {
             console.log('Usuário autenticado:', result);
-            alert(`Bem-vindo, ${result.name}`);
+            alert(`Bem-vindo, ${result.name}!`);
+
+            // Redireciona com base no cargo do usuário
+            if (result.role === 'gestor') {
+                window.location.href = '../Frontend/main_gestor_login.html';
+            } else if (result.role === 'colaborador') {
+                window.location.href = '../Frontend/main_colaborador_login.html';
+            } else {
+                alert('Cargo não identificado. Entre em contato com o administrador.');
+            }
         } else {
             alert(result.message || 'Erro ao realizar login.');
         }
@@ -34,8 +43,6 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
     }
 });
 
-
 document.getElementById('criar-conta').addEventListener('click', async (event) => {
-    window.location.hrer("./cadastro.html")
-}
-)
+    window.location.href = "../Frontend/cadastro.html"
+});
