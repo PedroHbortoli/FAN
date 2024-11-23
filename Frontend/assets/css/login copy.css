@@ -1,0 +1,131 @@
+/* Estilo base para todos os dispositivos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+body {
+    font-family: "Kodchasan", sans-serif;
+    background: linear-gradient(#4A90E2, #294F7C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Ajusta o contêiner principal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+#box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CADFF8;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 1200px;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+/* Imagens responsivas */
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Campos de entrada */
+.input input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 30px;
+    border: 2px solid #4A90E2;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Botões */
+.btn-in, .btn-up {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Estilo responsivo para telas menores que 1200px */
+@media (max-width: 1200px) {
+    #box {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .login, .image {
+        width: 100%;
+    }
+
+    .btn-up, .btn-in {
+        width: 100%;
+    }
+
+    .input input {
+        width: 100%;
+    }
+}
+
+/* Estilo responsivo para telas menores que 768px */
+@media (max-width: 768px) {
+    .title-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .title-page h3 {
+        font-size: 1rem;
+    }
+
+    .title-forms {
+        font-size: 1.5rem;
+    }
+
+    .input input {
+        font-size: 0.9rem;
+    }
+
+    .btn-up, .btn-in {
+        width: 100%;
+    }
+}
+
+/* Estilo responsivo para telas menores que 480px */
+@media (max-width: 480px) {
+    .title-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-page h3 {
+        font-size: 0.9rem;
+    }
+
+    .input input {
+        font-size: 0.8rem;
+    }
+
+    .btn-up, .btn-in {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}

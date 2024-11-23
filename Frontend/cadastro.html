@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAN - Cadastro</title>
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="shortcut icon" href="./assets/img/F.svg" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <section class="title-page">
+            <h1 class="title">FAN</h1>
+            <h3 class="subtitle">Fofoca aqui não</h3>
+        </section>
+
+
+        <section id="box">
+            <div class="cadastro">
+                <form id="cadastroForm">
+                    <div class="input">
+                        <div class="input-group">
+                            <p>Nome</p>
+                            <input type="text" name="nome" id="nome" placeholder="Digite Aqui">
+                        </div>
+                        <div class="input-group">
+                            <p>Sobrenome</p>
+                            <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite Aqui">
+                        </div>
+                    </div>
+                
+                    <div class="input">
+                        <div class="input-group">
+                            <p>Email Corporativo</p>
+                            <input type="email" name="email" id="email" placeholder="Digite Aqui">
+                        </div>
+                    </div>
+                
+                    <div class="input">
+                        <div class="input-group">
+                            <p>Senha</p>
+                            <input type="password" name="senha" id="senha" placeholder="Digite Aqui">
+                        </div>
+                
+                        <div class="input-group">
+                            <p>Confirmar Senha</p>
+                            <input type="password" name="confirm-senha" id="confirm-senha" placeholder="Digite Aqui">
+                        </div>
+                    </div>
+                
+                    <div class="input">
+                        <div class="input-group">
+                            <p>CPF</p>
+                            <input type="number" name="cpf" id="cpf" placeholder="Digite Aqui">
+                        </div>
+                
+                        <div class="input-group">
+                            <p>Área de Atuação</p>
+                            <div class="select-wrapper">
+                                <select name="area-atuacao" id="area">
+                                    <option>Selecione uma opção</option>
+                                    <option>Ciências Exatas e Tecnológicas</option>
+                                    <option>Ciências Humanas</option>
+                                    <option>Ciências da Saúde</option>
+                                    <option>Ciências Biológicas e Ambientais</option>
+                                    <option>Ciências Econômicas e Administrativas</option>
+                                    <option>Artes, Design e Comunicação</option>
+                                    <option>Ciências da Informação</option>
+                                    <option>Ciências Militares e da Segurança</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="input">
+                        <div class="input-group">
+                            <p>Cargo</p>
+                            <div class="radios">
+                                <input type="radio" name="cargo" id="gestor" value="Gestor" checked>
+                                <label for="gestor">Gestor</label>
+                                <input type="radio" name="cargo" id="colaborador" value="Colaborador">
+                                <label for="colaborador">Colaborador</label>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <button class="btn-in" type="submit">Sign Up</button>
+                </form>
+            </div>
+
+            <div class="image">
+                <img src="./assets/img/imagem cadastro.png" alt="Imagem de um time juntando as mãos">
+            </div>
+
+        </section>
+
+    </main>
+    <script src="./scriptCadastro.js"></script>
+</body>
+
+</html>

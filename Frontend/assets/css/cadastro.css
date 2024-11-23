@@ -1,0 +1,260 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(#4A90E2, #294F7C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.title-page, main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.title-page{
+    font-family: "Kodchasan", sans-serif;
+    color: #FFFFFF;
+}
+
+.title-page h1{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.title-page h3{
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+#box{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #CADFF8;
+    height: 70dvh;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 1rem 3rem;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.title-forms{
+    font-family: "Kantumruy Pro", sans-serif;
+    font-weight: 600;
+    color: #18365A;
+    font-size: 40px;
+}
+
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.input{
+    display: flex;
+    gap: 1rem;
+}
+
+.input-group label{
+    font-family: "Kantumruy Pro", sans-serif;
+    font-weight: 300;
+    color: #18365A;
+    font-size: 15px;
+    padding: 1dvh;
+}
+
+.radios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radios input[type="radio"] {
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #4A90E2; 
+    outline: none; 
+    cursor: pointer; 
+    margin-right: 5px; 
+    transition: background-color 0.2s, border-color 0.2s; 
+}
+
+.radios input[type="radio"]:checked {
+    background-color: #4A90E2; 
+    border-color: #294F7C; 
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input p{
+    font-family: "Kantumruy Pro", sans-serif;
+    font-weight: 300;
+    color: #18365A;
+    font-size: 22px;
+
+    padding: 5px;
+}
+
+.select-wrapper {
+    position: relative; /* Para posicionar a seta */
+    display: inline-block; /* Para que o select e a seta fiquem juntos */
+}
+
+select {
+    appearance: none; 
+    background: #CADFF8; 
+    border: #4A90E2 solid 2px; 
+    border-radius: 30px; 
+    padding: 10px; 
+    font-family: "Kantumruy Pro", sans-serif; 
+    font-weight: 300;
+    color: #18365A;
+    cursor: pointer;
+    width: 100%; 
+    transition: border-color 0.2s; 
+}
+
+select:hover {
+    border-color: #294F7C; 
+}
+
+.select-wrapper::after {
+    content: ''; 
+    position: absolute;
+    top: 50%; 
+    right: 10px; 
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent; 
+    border-right: 5px solid transparent; 
+    border-top: 5px solid #18365A; 
+    transform: translateY(-50%); 
+    pointer-events: none; 
+}
+
+.input input{
+    background: none;
+    border: #4A90E2 solid 2px;
+    border-radius: 30px;
+    width: 15rem;
+    padding: 5px 15px;
+
+    font-family: "Kantumruy Pro", sans-serif;
+    font-weight: 300;
+    color: #18365A;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.btn-in{
+    border: none;
+    background-color: #4A90E2;
+    padding: 1dvh 2rem 1dvh 2rem;
+    border-radius: 30px;
+    color: #FFFFFF;
+    width: 120px;
+
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-in:hover{
+    background: none;
+    border: #4A90E2 solid 2px;
+    transform: scale(1.1);
+
+    color: #18365A;
+}
+
+/* Estilo para telas menores que 768px (tablets e smartphones) */
+@media (max-width: 768px) {
+    #box {
+        flex-direction: column; /* Muda para layout vertical */
+        height: auto;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .cadastro, .login {
+        padding: 1rem; /* Reduz o padding */
+        gap: 2rem;
+    }
+
+    .image {
+        display: none; /* Oculta a imagem em telas menores */
+    }
+
+    .input input, select {
+        width: 100%; /* Ajusta a largura dos inputs */
+    }
+
+    .btn-in, .btn-up {
+        width: 100%; /* Botões ocupam toda a largura */
+    }
+
+    .title-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-page h3 {
+        font-size: 0.9rem;
+    }
+
+    .title-forms {
+        font-size: 1.5rem;
+    }
+
+    .input p {
+        font-size: 18px;
+    }
+}
+
+/* Estilo para telas menores que 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+    .title-page h1 {
+        font-size: 1.2rem;
+    }
+
+    .title-page h3 {
+        font-size: 0.8rem;
+    }
+
+    .title-forms {
+        font-size: 1.2rem;
+    }
+
+    .input p {
+        font-size: 16px;
+    }
+
+    .btn-in, .btn-up {
+        padding: 0.8rem;
+        font-size: 14px;
+    }
+}
