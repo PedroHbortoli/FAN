@@ -106,5 +106,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## Autores
 
-Desenvolvido por, Equipe FAN
+Desenvolvido por
+Equipe FAN
 
