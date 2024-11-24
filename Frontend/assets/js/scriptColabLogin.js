@@ -26,6 +26,9 @@ document.querySelector('.entrar').addEventListener('click', async () => {
             alert(data.message); // Mensagem de sucesso
             console.log('Login bem-sucedido. Salvando dados no localStorage...'); // Log de sucesso
 
+            localStorage.setItem('codeTeam', data.team.code_team);
+            console.log('Código do time armazenado no localStorage:', data.team.code_team);        
+
             // Salvar idEnterprise e teamName no localStorage
             const { id_enterprise, team } = data.team; // Certifique-se de que esses valores estão vindo do backend
             localStorage.setItem('idEnterprise', id_enterprise);

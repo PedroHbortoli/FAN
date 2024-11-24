@@ -13,22 +13,31 @@ function fecharPopup() {
     document.getElementById('overlay').style.display = 'none';
 }
 
-// Exemplo de JSON armazenado no localStorage
-localStorage.setItem('respostas', 'pedro:4\nmaccari:2\ndiego:3\ncaetano:5\nlucas:1\nlucas:1\nlucas:1\nlucas:1\nlucas:1');
+// // Exemplo de JSON armazenado no localStorage no formato correto
+// localStorage.setItem('respostasRaw', JSON.stringify([
+//     { "nome": "Pedro Gomes", "media": "3.00" },
+//     { "nome": "João Silva", "media": "4.50" },
+//     { "nome": "Maria Souza", "media": "3.67" }
+// ]));
 
 function gerarGrafico() {
     const ctx = document.getElementById('grafico').getContext('2d');
-    const respostasRaw = localStorage.getItem('respostasRaw') || ''; // Atualizado
-    const respostasArray = respostasRaw.split('\n').filter(item => item.trim() !== '');
 
-    const labels = [];
-    const data = [];
-    respostasArray.forEach(item => {
-        const [nome, nota] = item.split(':');
-        labels.push(nome);
-        data.push(parseFloat(nota)); // Ajustado para usar ponto flutuante
-    });
+    // Recupera o JSON do localStorage
+    const respostasRaw = localStorage.getItem('respostasRaw');
+    if (!respostasRaw) {
+        console.error('Nenhuma resposta encontrada no localStorage.');
+        return;
+    }
 
+    // Parse do JSON para um array de objetos
+    const respostasArray = JSON.parse(respostasRaw);
+
+    // Extrai labels (nomes) e dados (médias) do array
+    const labels = respostasArray.map(item => item.nome);
+    const data = respostasArray.map(item => parseFloat(item.media));
+
+    // Gera o gráfico com os dados extraídos
     new Chart(ctx, {
         type: 'bar',
         data: {
@@ -47,8 +56,9 @@ function gerarGrafico() {
             }
         }
     });
-}
 
+    console.log('Gráfico gerado com sucesso:', { labels, data });
+}
 
 function baixarGrafico() {
     html2canvas(document.getElementById('grafico')).then(function (canvas) {
@@ -58,6 +68,8 @@ function baixarGrafico() {
         link.click();
     });
 }
+
+
 
 async function fetchEnterpriseInfo() {
     const idEnterprise = localStorage.getItem('enterpriseId');
@@ -155,44 +167,6 @@ async function fetchTeams() {
     }
 }
 
-async function createTeam() {
-    const teamName = prompt('Digite o nome do novo time:');
-    const teamPassword = prompt('Digite uma senha para o time:');
-    const idUser = localStorage.getItem('userId');
-    const idEnterprise = localStorage.getItem('enterpriseId');
-
-    if (!teamName || !teamPassword) {
-        alert('Nome e senha do time são obrigatórios!');
-        return;
-    }
-
-    try {
-        const response = await fetch('http://localhost:3003/backend/teams', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                id_user: idUser,
-                id_enterprise: idEnterprise,
-                team_name: teamName,
-                password_team: teamPassword
-            })
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alert(`Time criado com sucesso! Código: ${data.team.code_team}`);
-            fetchTeams(); // Atualiza a lista de times
-        } else {
-            console.error('Erro ao criar o time:', data.message);
-        }
-    } catch (error) {
-        console.error('Erro ao conectar com o servidor:', error);
-    }
-}
-
 async function fetchAllTeamMembers() {
     try {
         const response = await fetch('http://localhost:3003/backend/teams/members');
@@ -245,10 +219,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAllTeamMembers();
 });
 
+document.getElementById('btn-add-time').addEventListener('click', async (event) => {
+    window.location.href = "../Frontend/main_gestor_login.html"
+})
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchEnterpriseInfo();
     fetchTeams();
-
-    document.querySelector('.btn-add-time').addEventListener('click', createTeam);
 });

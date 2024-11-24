@@ -42,11 +42,17 @@ document.querySelector('.entrar').addEventListener('click', async (event) => {
 
         if (response.ok) {
             alert(`Time criado com sucesso!\nCódigo do Time: ${result.team.code_team}`);
+            
+            // Salva o código do time no localStorage
+            localStorage.setItem('codeTeam', result.team.code_team);
+            console.log('Código do time armazenado no localStorage:', result.team.code_team);
+        
             window.location.href = '../Frontend/main_gestor.html'; // Redireciona
         } else {
             console.error('Erro na resposta da API:', result);
             alert(result.message || 'Erro ao criar o time.');
         }
+        
     } catch (error) {
         console.error('Erro ao conectar com o servidor:', error);
         alert('Erro ao conectar com o servidor.');

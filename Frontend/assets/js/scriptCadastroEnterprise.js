@@ -62,7 +62,7 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
         if (response.ok) {
             alert(`Empresa cadastrada com sucesso! Código gerado: ${result.code}`);
             // Redireciona o usuário para outra página (substitua 'success.html' pela URL desejada)
-            window.location.href = '../login.html';
+            window.location.href = '../Frontend/login.html';
         } else {
             alert(`Erro ao cadastrar empresa: ${result.message}`);
         }

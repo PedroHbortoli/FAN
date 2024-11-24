@@ -7,7 +7,7 @@ html{
     background: linear-gradient(#4A90E2, #294F7C);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 110vh;
     width: 100%;
 }
 
@@ -139,7 +139,7 @@ main{
     transition: transform 0.2s;
 }
 
-.btn:hover, .btn-pop:hover{
+.btn:hover, .btn-pop:hover, #btn-add-time:hover{
     background: #4A90E2;
     border: #4A90E2 solid 2px;
     transform: scale(1.1);  
@@ -181,4 +181,22 @@ main{
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
+}
+
+#btn-add-time {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 100; 
+
+    font-family: "Kantumruy Pro", sans-serif; 
+    
+    border: none;
+    background-color: #4a90e2;
+    padding: 1dvh 2rem 1dvh 2rem;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+
+    transition: transform 0.2s;
 }

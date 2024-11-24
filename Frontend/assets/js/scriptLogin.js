@@ -46,3 +46,7 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
         alert('Erro ao conectar com o servidor.');
     }
 });
+
+document.getElementById('criar-conta').addEventListener('click', async (event) => {
+    window.location.href = "../Frontend/cadastro.html"
+})

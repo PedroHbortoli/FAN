@@ -32,9 +32,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+async function carregarUsuariosEquipe() {
+    const codeTeam = localStorage.getItem('codeTeam'); // Código do time armazenado no localStorage
+
+    if (!codeTeam) {
+        console.error('Código do time não encontrado no localStorage.');
+        return;
+    }
+
+    try {
+        const response = await fetch(`http://localhost:3003/backend/teams/members/${codeTeam}`);
+        const data = await response.json();
+
+        if (response.ok && data.teamMembers.length > 0) {
+            const userList = document.querySelector('.list ul');
+            userList.innerHTML = ''; // Limpa a lista antes de adicionar novos usuários
+
+            data.teamMembers.forEach(member => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${member.name} - ${member.function_user}`; // Nome e função do usuário
+                userList.appendChild(listItem);
+            });
+
+            console.log('Membros do time carregados:', data.teamMembers);
+        } else {
+            console.warn('Nenhum membro encontrado para o time:', codeTeam);
+            const userList = document.querySelector('.list ul');
+            userList.innerHTML = '<li style="color: red;">Nenhum membro encontrado</li>';
+        }
+    } catch (error) {
+        console.error('Erro ao buscar membros do time:', error);
+    }
+}
+
+// Chama a função após o DOM ser carregado
+document.addEventListener('DOMContentLoaded', carregarUsuariosEquipe);
+
 document.getElementById('btn-enviar').addEventListener('click', () => {
     const nomeUsuario = localStorage.getItem('userName') || 'Usuário'; // Nome do usuário
     const respostas = {};
+
+    localStorage.removeItem('respostas');
+    localStorage.removeItem('respostasRaw');
 
     // Itera sobre as perguntas e captura as respostas
     const perguntas = document.querySelectorAll('.pergunta');

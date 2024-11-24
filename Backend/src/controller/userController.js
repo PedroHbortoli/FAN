@@ -70,7 +70,7 @@ const loginUser = (req, res) => {
                 SELECT e.id, e.name_enterprise
                 FROM enterprise e
                 WHERE e.code = ?
-                `;
+            `;
 
             connection.query(queryEnterprise, [code], (err, enterpriseResults) => {
                 if (err) {
@@ -84,18 +84,36 @@ const loginUser = (req, res) => {
 
                 const enterprise = enterpriseResults[0];
 
-                // Retorna as informações do usuário e da empresa
-                res.status(200).json({
-                    id: user.id,
-                    name: user.name,
-                    email: user.email,
-                    role: user.role,
-                    area_of_activity: user.area_of_activity,
-                    function_user: user.function_user,
-                    enterprise: {
-                        id: enterprise.id, // ID da empresa
-                        name: enterprise.name_enterprise
+                // Query para buscar o código do time associado ao usuário
+                const queryTeam = `
+                    SELECT t.code_team
+                    FROM teams t
+                    JOIN member_team mt ON t.id = mt.id_team
+                    WHERE mt.id_user = ?
+                `;
+
+                connection.query(queryTeam, [user.id], (err, teamResults) => {
+                    if (err) {
+                        console.error('Erro ao buscar código do time:', err.message);
+                        return res.status(500).json({ message: 'Erro no servidor ao buscar código do time.' });
                     }
+
+                    const team = teamResults.length > 0 ? teamResults[0] : null;
+
+                    // Retorna as informações do usuário, empresa e time
+                    res.status(200).json({
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        role: user.role,
+                        area_of_activity: user.area_of_activity,
+                        function_user: user.function_user,
+                        enterprise: {
+                            id: enterprise.id,
+                            name: enterprise.name_enterprise,
+                        },
+                        team: team // Inclui o código do time
+                    });
                 });
             });
         });
@@ -104,6 +122,7 @@ const loginUser = (req, res) => {
         res.status(500).json({ message: 'Erro interno no servidor.' });
     }
 };
+
 
 module.exports = {
     createUser,
