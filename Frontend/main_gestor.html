@@ -1,56 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAN - Gestor</title>
     <link rel="stylesheet" href="./assets/css/main_gestor.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="./assets/img/F.svg" type="image/x-icon">
 </head>
-    <body>
-        <header class="title-page">
-            <h1>FAN</h1>
-            <h2 id="nome-empresa">(Pegar nome da empresa no banco)</h2>
-        </header>
 
-        <article class="exib_times">
-            <!-- Nome criado no javascript -->
-            <h2>(Nome Times banco)</h2>
+<body>
+    <header class="title-page">
+        <h1>FAN</h1>
+        <h2 id="nome-empresa">(Pegar nome da empresa no banco)</h2>
+    </header>
 
-            <div class="list">
-                <!-- Lista criada no javascript -->
-                <ul>
-                    <li>(Nome times empresa)</li> 
-                </ul>
+    <article class="exib_times">
+        <!-- Nome criado no javascript -->
+        <h2>Times</h2>
+
+        <div class="list">
+            <!-- Lista criada no javascript -->
+            <ul>
+                <li>Nova equipe <button class="btn-add-time"> + </button></li>
+            </ul>
+        </div>
+    </article>
+
+    <main>
+        <div class="box_time">
+            <h3>Detalhes do Time</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de dados serão preenchidas dinamicamente -->
+                </tbody>
+            </table>
+
+            <button class="btn" id="gerarRelatorio">Gerar Relatório</button>
+            <div id="overlay" onclick="fecharPopup()"></div>
+            <div id="popup">
+                <canvas id="grafico" width="400" height="200"></canvas>
+
+                <div class="botoes">
+                    <button class="btn-pop" onclick="baixarGrafico()">Baixar Gráfico</button>
+                    <button class="btn-pop" onclick="fecharPopup()">Fechar</button>
+                </div>
             </div>
-        </article>
+        </div>
+    </main>
 
-        <main>
-            <div class="box_time">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Cargo</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Linhas de dados podem ser adicionadas aqui -->
-                        <tr>
-                            <td>pegar nome banco</td>
-                            <td>pegar cargo banco</td>
-                            <td>pegar com base nas perguntas</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <script src="./assets/js/scriptMainGestor.js"></script>
+</body>
 
-                <button class="btn">Gerar Relatório</button>
-            </main>
-            
-        </main>
-    </body>
 </html>

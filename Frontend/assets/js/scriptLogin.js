@@ -26,9 +26,13 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
             console.log('Usuário autenticado:', result);
             alert(`Bem-vindo, ${result.name}!`);
 
+            // Salva o ID e o nome do usuário logado no localStorage
+            localStorage.setItem('userId', result.id);
+            localStorage.setItem('userName', result.name); // Armazena o nome do usuário
+
             // Redireciona com base no cargo do usuário
             if (result.role === 'gestor') {
-                window.location.href = '../Frontend/main_gestor_login.html';
+                window.location.href = '../Frontend/main_gestor.html';
             } else if (result.role === 'colaborador') {
                 window.location.href = '../Frontend/main_colaborador_login.html';
             } else {
@@ -41,8 +45,4 @@ document.querySelector('.btn-in').addEventListener('click', async (event) => {
         console.error('Erro na requisição:', error);
         alert('Erro ao conectar com o servidor.');
     }
-});
-
-document.getElementById('criar-conta').addEventListener('click', async (event) => {
-    window.location.href = "../Frontend/cadastro.html"
 });

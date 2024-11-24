@@ -21,9 +21,9 @@
             <h2>(Nome Times banco)</h2>
 
             <div class="list">
-                <!-- Lista criada no javascript -->
+                <h3>Usuários na Equipe</h3>
                 <ul>
-                    <li>(Nome times empresa)</li> 
+                    <!-- Os usuários serão renderizados dinamicamente aqui -->
                 </ul>
             </div>
         </article>
@@ -32,41 +32,109 @@
             <div class="box_time">
                 <div class="pergunta">
                     <!-- Gerado pelo javascript -->
-                    <h3>Pergunta 1</h3>
+                    <h3>1. Você sente que tem clareza sobre suas prioridades e objetivos para esta semana?</h3>
+                    
                     
                     <div class="respostas">
                         <div>
-                            <input type="radio" name="resp" id="1" checked>
-                            <label for="1">1</label>    
+                            <input type="radio" name="resp1" id="1-1" value="1">
+                            <label for="1-1">1</label>    
                         </div>
                         
                         <div>
-                            <input type="radio" name="resp" id="2">
-                            <label for="2">2</label>
+                            <input type="radio" name="resp1" id="1-2" value="2">
+                            <label for="1-2">2</label>
                         </div>
-
+                    
                         <div>
-                            <input type="radio" name="resp" id="3">
-                            <label for="3">3</label>
+                            <input type="radio" name="resp1" id="1-3" value="3">
+                            <label for="1-3">3</label>
                         </div>
-
+                    
                         <div>
-                            <input type="radio" name="resp" id="4">
-                            <label for="4">4</label>
+                            <input type="radio" name="resp1" id="1-4" value="4">
+                            <label for="1-4">4</label>
                         </div>
-
+                    
                         <div>
-                            <input type="radio" name="resp" id="5">
-                            <label for="5">5</label>
+                            <input type="radio" name="resp1" id="1-5" value="5">
+                            <label for="1-5">5</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="pergunta">
+                    <!-- Gerado pelo javascript -->
+                    <h3>2. O quanto você sente que seu trabalho está alinhado com as metas da equipe?</h3>
+                    
+                    <div class="respostas">
+                        <div>
+                            <input type="radio" name="resp2" id="2-1">
+                            <label for="2-1">1</label>    
+                        </div>
+                        
+                        <div>
+                            <input type="radio" name="resp2" id="2-2">
+                            <label for="2-2">2</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" name="resp2" id="2-3">
+                            <label for="2-3">3</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" name="resp2" id="2-4">
+                            <label for="2-4">4</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" name="resp2" id="2-5">
+                            <label for="2-5">5</label>
                         </div>
                     </div>
                 </div>
+                
+                <div class="pergunta">
+                    <!-- Gerado pelo javascript -->
+                    <h3>3. Como você avaliaria sua motivação para concluir suas tarefas atualmente?</h3>
+                    
+                    <div class="respostas">
+                        <div>
+                            <input type="radio" name="resp3" id="3-1">
+                            <label for="3-1">1</label>    
+                        </div>
+                        
+                        <div>
+                            <input type="radio" name="resp3" id="3-2">
+                            <label for="3-2">2</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" name="resp3" id="3-3">
+                            <label for="3-3">3</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" name="resp3" id="3-4">
+                            <label for="3-4">4</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" name="resp3" id="3-5">
+                            <label for="3-5">5</label>
+                        </div>
+                    </div>
+                </div>
+                
 
-                <button class="btn" type="submit">Enviar Respostas</button>
+                <button class="btn" type="submit" id="btn-enviar">Enviar Respostas</button>
             </div>
 
             </main>
             
         </main>
+        <script src="./assets/js/scriptMainColabPerguntas.js"></script>
     </body>
 </html>

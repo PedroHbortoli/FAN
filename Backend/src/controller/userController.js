@@ -1,6 +1,6 @@
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
-const bcrypt = require('bcrypt'); 
+const bcrypt = require('bcrypt');
 
 
 const createUser = (req, res) => {
@@ -67,10 +67,10 @@ const loginUser = (req, res) => {
 
             // Query para validar o código da empresa
             const queryEnterprise = `
-                SELECT id, name_enterprise
-                FROM enterprise
-                WHERE code = ?
-            `;
+                SELECT e.id, e.name_enterprise
+                FROM enterprise e
+                WHERE e.code = ?
+                `;
 
             connection.query(queryEnterprise, [code], (err, enterpriseResults) => {
                 if (err) {
@@ -92,7 +92,10 @@ const loginUser = (req, res) => {
                     role: user.role,
                     area_of_activity: user.area_of_activity,
                     function_user: user.function_user,
-                    enterprise: enterprise.name_enterprise
+                    enterprise: {
+                        id: enterprise.id, // ID da empresa
+                        name: enterprise.name_enterprise
+                    }
                 });
             });
         });
