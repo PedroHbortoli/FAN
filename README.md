@@ -104,7 +104,7 @@ Contribuições são bem-vindas! Se você encontrar um bug ou quiser adicionar u
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## Autor
+## Autores
 
-Desenvolvido por Gabriela Mendes.
+Desenvolvido por, Equipe FAN
 
